@@ -1,10 +1,9 @@
 import express from 'express';
+import { listUsers } from '../controllers/users';
 
 const userRouter = express.Router();
 
 // GET /users
-userRouter.get('/', (req, res) => {
-  res.status(200).json({ message: 'This is a GET request to /users!' });
-});
+userRouter.get('/', listUsers);
 
 export default userRouter;
