@@ -16,15 +16,3 @@ VALUES ('SD Dept Meeting', '2021-10-19 10:00:00'),
       ('Important thing', '2021-10-30 19:30:00')
 `;
 
-export const seedMeetingAttendances = `
-INSERT INTO meeting_attendances(meeting_id, member_id)
-VALUES (1, 1),
-      (1, 2),
-      (1, 3),
-      (2, 1),
-      (2, 2), 
-      (2, 5),
-      (3, 1),
-      (3, 2),
-      (4, 1)
-`;

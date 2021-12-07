@@ -1,26 +1,19 @@
 import { executeQuery, executeQueryArray } from '/src/utils/queryFunctions';
-import { dropAllTables } from '/src/db/utils/dropTables';
+import { dropAllTablesQuery } from '/src/db/utils/dropTables';
 import {
   createMembersTable,
   createMeetingsTable,
-  createMeetingAttendancesTable,
 } from '/src/db/utils/createTables';
 import {
   seedMembers,
   seedMeetings,
-  seedMeetingAttendances,
 } from '/src/db/utils/seeds';
 
-const dropTables = () => executeQuery(dropAllTables);
+const dropTables = () => executeQuery(dropAllTablesQuery);
 
-// createMeetingAttendancesTable depends on createMembersTable and createMeetingsTable
-const createTables = () =>
-  executeQueryArray([createMembersTable, createMeetingsTable]).then(() =>
-    executeQueryArray([createMeetingAttendancesTable])
-  );
+const createTables = () => executeQueryArray([createMembersTable, createMeetingsTable]);
 
-const seedTables = () =>
-  executeQueryArray([seedMembers, seedMeetings, seedMeetingAttendances]);
+const seedTables = () => executeQueryArray([seedMembers, seedMeetings]);
 
 (async () => {
   await dropTables();

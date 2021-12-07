@@ -21,13 +21,3 @@ CREATE TABLE IF NOT EXISTS meetings (
   )
   `;
 
-// MEETING ATTENDANCES
-export const createMeetingAttendancesTable = `
-DROP TABLE IF EXISTS meeting_attendances;
-CREATE TABLE IF NOT EXISTS meeting_attendances (
-  id SERIAL PRIMARY KEY,
-  meeting_id INTEGER NOT NULL REFERENCES meetings (id),
-  member_id INTEGER NOT NULL REFERENCES members (id),
-  UNIQUE (member_id, meeting_id)
-  )
-  `;
