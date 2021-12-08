@@ -18,9 +18,4 @@ app.use('/', indexRouter);
 app.use('/members', membersRouter);
 app.use('/sample', sampleRouter);
 
-// catch 404 and forward to error handler
-app.use((err, req, res, next) => {
-  res.status(400).json({ error: err.stack });
-});
-
 export default app;
