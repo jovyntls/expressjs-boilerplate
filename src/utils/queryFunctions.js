@@ -1,4 +1,4 @@
-import { pool } from 'src/models/pools';
+import { pool } from 'src/db/pools';
 
 export const executeQueryArray = async (arr) =>
   new Promise((resolve) => {
