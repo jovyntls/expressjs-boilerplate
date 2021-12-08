@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 // routers
 import indexRouter from 'src/routes/index';
-import usersRouter from 'src/routes/users';
+import membersRouter from 'src/routes/members';
 import sampleRouter from 'src/routes/sample';
 
 const app = express();
@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // API routes
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/members', membersRouter);
 app.use('/sample', sampleRouter);
 
 // catch 404 and forward to error handler
