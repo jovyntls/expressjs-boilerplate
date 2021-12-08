@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'DAO Backend Docs'
 theme = "ace-documentation"
 
+enableEmoji=true
+
 # Geekdoc required configuration
 pygmentsUseClasses = true
 pygmentsCodeFences = true
