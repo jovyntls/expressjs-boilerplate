@@ -1,5 +1,5 @@
 ---
-title: "Getting Started"
+title: 'Getting Started'
 date: 2021-12-09T00:44:31+08:00
 ---
 
@@ -7,11 +7,19 @@ date: 2021-12-09T00:44:31+08:00
 
 Our backend will be written in Express.js, which is a Node.js framework.
 
-1. Install nvm (Node Version Manager): [Installation instructions](https://github.com/nvm-sh/nvm#installing-and-updating)
-   - If you are on MacOS, do not use Homebrew. Homebrew installation is not supported.
-   - Verify that nvm is correctly installed by running `nvm ls-remote`, which lists all versions of Node.
+### Install nvm (Node Version Manager)
+
+1. Use _either_ cURL or Wget to install nvm:
+   - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+   - `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash`
+     {{< alert style="warning" >}} Homebrew installation is not supported. If you are on MacOS, do not use Homebrew. {{< /alert >}}
+2. Verify that nvm is correctly installed by running `command -v nvm`, which should output `nvm` if the installation is successful.
+   - If the installation is not successful, you can find [troubleshooting tips here](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+### Install Node
+
 1. Install Node using nvm: `nvm install v16`
-   - Use `node -v` to verify that Node v16 has been correctly installed.
+2. Verify that Node v16 has been correctly installed: `node -v`.
 
 ## Installing PostgreSQL
 
@@ -28,7 +36,7 @@ Our database will be using PostgreSQL, a relational database management system.
 **For Ubuntu**
 
 1. PostgreSQL is available in all Ubuntu versions by default.
-   - If you still need to download PostgreSQL: https://www.postgresql.org/download/linux/ubuntu/ (commands under 'PostgreSQL Apt Repository')
+   - If you still need to download PostgreSQL: [Installation instructions](https://www.postgresql.org/download/linux/ubuntu/) (under 'PostgreSQL Apt Repository')
 2. `sudo service postgresql start`
 
 ### Setting up psql
@@ -44,30 +52,35 @@ For all steps, replace `jovyntan` with your own user:
 
 ## Linting
 
-If Prettier still doesn't work:
+This project is linted using Prettier.
 
-1. Ensure Prettier is installed as a VS Code extension.
-2. In VSCode, enter Cmd+Shift+P (or Windows equivalent) and select 'Format document'. Select Prettier as the formatter.
-3. If (2) doesn't work, you can `npm run pretty`.
-4. If an error occurs as prettier is not installed globally, `npm install -g prettier`.
+1. Install [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) as a VS Code extension.
+2. In VSCode, enter Cmd+Shift+P (or Windows equivalent) and select 'Format document'. Select Prettier as the default formatter.
+3. Turn on **Format on Save** in VSCode.
+   - Via VSCode settings: **File** > **Preferences** > **Settings** > Search for **Format On Save** and check the box.
+   - Via settings.json: Open `settings.json` and add the following line: `"editor.formatOnSave": true`
+
+From here, files should automatically be formatted on save.
+
+If that doesn't work, you can also use `npm run pretty`. If an error occurs as Prettier is not installed globally: `npm install -g prettier`.
 
 ## Development
 
-### Setting Up
-
 You're almost there! Final steps before you start coding:
+
+### Setting Up
 
 1. Run `npm install`
 1. Make a copy of `.env.template` and name it `.env.local`. Fill in the empty fields.
-    {{< alert style="warning" >}} `.env.local` is ignored by `.gitignore` because it contains your passwords - do _not_ commit `.env.local`! {{< /alert >}}
+   {{< alert style="warning" >}} `.env.local` is ignored by `.gitignore` because it contains your passwords - do _not_ commit `.env.local`! {{< /alert >}}
 1. Create a database for this project:
    1. Enter the psql command prompt: `psql`
    1. Create the database: `CREATE DATABASE fintech_dao_development;`
    1. Quit the psql command prompt: `\q`
 1. Create and seed tables: `npm run seeddb`
    - This script will drop all tables and re-create the tables with sample data. It may take a while to run.
-1. Run `npm run startdev`. You should be able to access the API at [http://localhost:3000](http://localhost:3000), or a different port if `3000` has been taken. :tada:
-
+1. Start the development server: `npm run startdev`
+   - You should be able to access the API at [http://localhost:3000](http://localhost:3000), or a different port if `3000` has been taken. :tada::tada:
 
 ### Available Scripts
 
@@ -80,8 +93,9 @@ Each of these scripts should be run using `npm run`, e.g. `npm run start`.
 
 ## Helpful Tools
 
-- [Postman](https://www.postman.com/) is highly useful for testing your API requests. Both the desktop app and the web version work fine.
-  - If you use the web version, you will need to download the Postman Agent to access `localhost`. The web version will link you to the Postman Agent (along with necessary instructions) if you try to make a request to `localhost`.
-- Any JSON formatting chrome extension, e.g. [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
-- [pgAdmin](https://www.pgadmin.org/) to manage your databases with a GUI. Not necessary, especially if you prefer the command line
-
+- [Postman](https://www.postman.com/) is highly useful for testing your API requests.
+  - Both the desktop app and the web version work fine. If you use the web version, you will need to download the Postman Agent to access `localhost`.
+- Any JSON formatting Chrome extension, e.g. [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh)
+- [pgAdmin](https://www.pgadmin.org/) to manage your databases with a GUI if you prefer GUI over command line.
+- [SourceTree](https://www.sourcetreeapp.com/) for git if you prefer GUI over command line.
+  - More help with Git: [Git conventions](https://se-education.org/guides/conventions/git.html) and [branching in Git](https://nus-cs2103-ay2122s1.github.io/website/se-book-adapted/chapters/gitAndGithub.html#branch-doing-multiple-parallel-changes)
