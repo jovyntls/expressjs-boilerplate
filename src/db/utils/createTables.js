@@ -20,4 +20,3 @@ CREATE TABLE IF NOT EXISTS meetings (
   UNIQUE (name, datetime)
   )
   `;
-

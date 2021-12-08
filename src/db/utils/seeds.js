@@ -15,4 +15,3 @@ VALUES ('SD Dept Meeting', '2021-10-19 10:00:00'),
       ('Society Monthly Meeting', '2021-12-1 12:34:00'),
       ('Important thing', '2021-10-30 19:30:00')
 `;
-

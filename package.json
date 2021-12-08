@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "pretty": "prettier --config .prettierrc --write '**/*.{js,json}' '!node_modules/**'",
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",

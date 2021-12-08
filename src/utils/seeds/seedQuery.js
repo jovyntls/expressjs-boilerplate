@@ -4,14 +4,12 @@ import {
   createMembersTable,
   createMeetingsTable,
 } from '/src/db/utils/createTables';
-import {
-  seedMembers,
-  seedMeetings,
-} from '/src/db/utils/seeds';
+import { seedMembers, seedMeetings } from '/src/db/utils/seeds';
 
 const dropTables = () => executeQuery(dropAllTablesQuery);
 
-const createTables = () => executeQueryArray([createMembersTable, createMeetingsTable]);
+const createTables = () =>
+  executeQueryArray([createMembersTable, createMeetingsTable]);
 
 const seedTables = () => executeQueryArray([seedMembers, seedMeetings]);
 
