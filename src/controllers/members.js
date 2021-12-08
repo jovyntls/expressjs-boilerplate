@@ -21,3 +21,14 @@ export const addMember = async (req, res) => {
     handlePgError(err, res, membersModel.table);
   }
 };
+
+export const removeMember = async (req, res) => {
+  const memberId = req.params.id;
+  try {
+    const data = await membersModel.deleteMember(memberId);
+    res.status(200).json({ message: `Member with id ${memberId} has been deleted.` });
+  } catch (err) {
+    handlePgError(err, res, membersModel.table);
+  }
+}
+
