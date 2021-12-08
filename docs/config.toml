@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://elegant-tesla-d6e95b.netlify.app/'
 languageCode = 'en-us'
 title = 'DAO Backend Docs'
 theme = "ace-documentation"
