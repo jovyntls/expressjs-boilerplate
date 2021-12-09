@@ -8,7 +8,7 @@
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
     "startdev": "nodemon --exec babel-node ./src/bin/www",
-    "seeddb": "babel-node ./src/utils/seeds/seedQuery"
+    "seeddb": "babel-node ./src/db/seeds/seedQuery"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -29,6 +29,8 @@
     "@babel/runtime": "^7.16.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "nodemon": "^2.0.15"
