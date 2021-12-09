@@ -1,5 +1,5 @@
 import express from 'express';
-import { addMember, listMembers, removeMember } from 'src/controllers/members';
+import { addMember, listMembers, removeMember } from 'controllers/members';
 
 const membersRouter = express.Router();
 

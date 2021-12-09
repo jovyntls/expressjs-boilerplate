@@ -1,4 +1,4 @@
-import { testEnvironmentVariable } from 'src/settings';
+import { testEnvironmentVariable } from 'settings';
 
 const getSample = (req, res) =>
   res.status(200).json({

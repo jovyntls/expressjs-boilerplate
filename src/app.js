@@ -2,9 +2,9 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 // routers
-import indexRouter from 'src/routes/index';
-import membersRouter from 'src/routes/members';
-import sampleRouter from 'src/routes/sample';
+import indexRouter from 'routes/index';
+import membersRouter from 'routes/members';
+import sampleRouter from 'routes/sample';
 
 const app = express();
 

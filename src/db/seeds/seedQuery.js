@@ -1,10 +1,7 @@
-import { executeQuery, executeQueryArray } from 'src/utils/queryFunctions';
-import dropAllTablesQuery from 'src/db/utils/dropTables';
-import {
-  createMembersTable,
-  createMeetingsTable,
-} from 'src/db/utils/createTables';
-import { seedMembers, seedMeetings } from 'src/db/utils/seeds';
+import { executeQuery, executeQueryArray } from '../utils/queryFunctions';
+import dropAllTablesQuery from '../utils/dropTables';
+import { createMembersTable, createMeetingsTable } from '../utils/createTables';
+import { seedMembers, seedMeetings } from './seedTables';
 
 const dropTables = () => executeQuery(dropAllTablesQuery);
 

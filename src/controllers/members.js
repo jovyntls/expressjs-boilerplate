@@ -1,5 +1,5 @@
-import MemberModel from 'src/models/member';
-import handlePgError from 'src/controllers/errors';
+import MemberModel from 'models/member';
+import handlePgError from 'controllers/errors';
 
 const membersModel = new MemberModel('members');
 
