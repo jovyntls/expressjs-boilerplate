@@ -1,7 +1,7 @@
 const PG_ERROR_DUPLICATE_KEY = '23505';
 const PG_ERROR_NOT_NULL = '23502';
 
-export const handlePgError = (err, res, modelName) => {
+const handlePgError = (err, res, modelName) => {
   if (err.code === PG_ERROR_DUPLICATE_KEY) {
     res.status(400).json({
       error: `This entry already exists in '${modelName}'`,
@@ -12,3 +12,5 @@ export const handlePgError = (err, res, modelName) => {
     res.status(500).json({ error: err.stack });
   }
 };
+
+export default handlePgError;

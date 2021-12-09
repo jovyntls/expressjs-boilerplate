@@ -1,5 +1,5 @@
 import express from 'express';
-import { getSample } from 'src/controllers/sample';
+import getSample from 'src/controllers/sample';
 
 const sampleRouter = express.Router();
 

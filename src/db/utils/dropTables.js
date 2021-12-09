@@ -4,4 +4,6 @@ const dropMeetingsTable = 'DROP TABLE IF EXISTS meetings CASCADE';
 
 const dropTableSequence = [dropMembersTable, dropMeetingsTable];
 
-export const dropAllTablesQuery = dropTableSequence.join(';');
+const dropAllTablesQuery = dropTableSequence.join(';');
+
+export default dropAllTablesQuery;

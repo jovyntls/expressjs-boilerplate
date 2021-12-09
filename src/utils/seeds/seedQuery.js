@@ -1,5 +1,5 @@
 import { executeQuery, executeQueryArray } from 'src/utils/queryFunctions';
-import { dropAllTablesQuery } from 'src/db/utils/dropTables';
+import dropAllTablesQuery from 'src/db/utils/dropTables';
 import {
   createMembersTable,
   createMeetingsTable,

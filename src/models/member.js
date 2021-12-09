@@ -1,10 +1,6 @@
 import Model from './model';
 
 class MemberModel extends Model {
-  constructor(table) {
-    super(table);
-  }
-
   async listAllMembers() {
     const query = `SELECT name, email FROM ${this.table}`;
     return this.pool.query(query);

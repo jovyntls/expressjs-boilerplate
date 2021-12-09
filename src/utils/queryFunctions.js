@@ -1,4 +1,4 @@
-import { pool } from 'src/db/pools';
+import pool from 'src/db/pools';
 
 export const executeQueryArray = async (arr) =>
   new Promise((resolve) => {
@@ -9,4 +9,4 @@ export const executeQueryArray = async (arr) =>
     });
   });
 
-export const executeQuery = async (q) => await pool.query(q);
+export const executeQuery = async (q) => pool.query(q);
